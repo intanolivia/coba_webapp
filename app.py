@@ -13,7 +13,7 @@ conn = st.connection("postgresql", type="sql",
 with conn.session as session_cinema:
     query = text('CREATE TABLE IF NOT EXISTS SCHEDULE (id SERIAL, movie_title TEXT, genre TEXT, director TEXT, release_date DATE, start_time TIME, end_time TIME, theater_number INT, ticket_price DECIMAL);')
    
-    session_cinema.execute(query_cinema_create)
+    session_cinema.execute(query)
 
 # Streamlit app for cinema schedule
 st.header('SIMPLE CINEMA SCHEDULE MANAGEMENT SYS')
