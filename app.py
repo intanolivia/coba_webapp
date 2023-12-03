@@ -16,7 +16,7 @@ with conn.session as session_cinema:
     session_cinema.execute(query)
 
 # Streamlit app for cinema schedule
-st.header('SIMPLE CINEMA SCHEDULE MANAGEMENT SYS')
+st.header('CINEMA SCHEDULE MANAGEMENT SYSTEM')
 page_cinema = st.sidebar.selectbox("Choose Menu", ["View Cinema Schedule", "Edit Cinema Schedule"])
 
 if page_cinema == "View Cinema Schedule":
