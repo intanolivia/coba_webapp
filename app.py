@@ -59,23 +59,26 @@ if page_cinema == "Edit Cinema Schedule":
                 end_time_baru = st.time_input("End Time", end_time_lama)
                 theater_number_baru = st.number_input("Theater Number", theater_number_lama)
                 ticket_price_baru = st.number_input("Ticket Price", ticket_price_lama)
-                    
-                if st.form_submit_button('UPDATE'):
-                    with conn_cinema.session as session_cinema:
-                        query_update_cinema = text('''
-                                UPDATE movie_schedule
-                                SET movie_title=:1, genre=:2, director=:3, release_date=:4, 
-                                    start_time=:5, end_time=:6, theater_number=:7, ticket_price=:8
-                                WHERE id=:9;
-                            ''')
-                        session_cinema.execute(query_update_cinema, {'1': movie_title_baru, '2': genre_baru, '3': director_baru,
+
+
+               col1, col2 = st.columns([1, 6])
+
+                with col1:
+                    if st.form_submit_button('UPDATE'):
+                        with conn_cinema.session as session_cinema:
+                            query = text('UPDATE schedule \
+                                          SET doctor_name=:1, patient_name=:2, gender=:3, symptom=:4, \
+                                          handphone=:5, address=:6, waktu=:7, tanggal=:8 \
+                                          WHERE id=:9;')
+                            session.execute(query_update_cinema, {'1': movie_title_baru, '2': genre_baru, '3': director_baru,
                                                                          '4': release_date_baru, '5': start_time_baru, '6': end_time_baru,
                                                                          '7': theater_number_baru, '8': ticket_price_baru, '9': id})
-                        session_cinema.commit()
-                        st.experimental_rerun()
-
+                            session.commit()
+                            st.experimental_rerun()
+                
+                with col2:
                     if st.form_submit_button('DELETE'):
-                        query_delete_cinema = text(f'DELETE FROM movie_schedule WHERE id=:1;')
-                        session_cinema.execute(query_delete_cinema, {'1': id})
-                        session_cinema.commit()
+                        query = text(f'DELETE FROM schedule WHERE id=:1;')
+                        session.execute(query, {'1':id})
+                        session.commit()
                         st.experimental_rerun()
