@@ -21,8 +21,7 @@ page_cinema = st.sidebar.selectbox("Choose Menu", ["View Cinema Schedule", "Edit
 
 if page_cinema == "View Cinema Schedule":
     # Display cinema schedule data
-        result_cinema = session_cinema.execute('SELECT * FROM movie_schedule ORDER BY id;')
-        data_cinema = [dict(row) for row in result_cinema]
+        data_cinema = conn.query('SELECT * FROM movie_schedule ORDER BY id;')
         st.dataframe(data_cinema)
 
 if page_cinema == "Edit Cinema Schedule":
