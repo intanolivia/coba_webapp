@@ -1,4 +1,4 @@
-alimport streamlit as st
+import streamlit as st
 from sqlalchemy import create_engine, text
 import pandas as pd
 
