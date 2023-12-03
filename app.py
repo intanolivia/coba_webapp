@@ -42,7 +42,7 @@ if page_cinema == "Edit Cinema Schedule":
     for row in result_cinema:
       id, movie_title_lama, genre_lama, director_lama, release_date_lama, start_time_lama, end_time_lama, theater_number_lama, ticket_price_lama = row
             
-        with st.expander(f'{movie_title_lama}'):
+      with st.expander(f'{movie_title_lama}'):
                 with st.form(f'movie-data-{id}'):
                     movie_title_baru = st.text_input("Movie Title", movie_title_lama)
                     genre_baru = st.text_input("Genre", genre_lama)
