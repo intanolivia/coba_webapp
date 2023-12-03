@@ -56,7 +56,6 @@ if page_cinema == "Edit Cinema Schedule":
                 theater_number_baru = st.number_input("Theater Number", theater_number_lama)
                 ticket_price_baru = st.number_input("Ticket Price", ticket_price_lama)
 
-
                 col1, col2 = st.columns([1, 6])
 
                 with col1:
@@ -66,9 +65,7 @@ if page_cinema == "Edit Cinema Schedule":
                                           SET movie_title=:1, genre=:2, director=:3, release_date=:4, \
                                           start_time=:5, end_time=:6, theater_number=:7, ticket_price=:8 \
                                           WHERE id=:9;')
-                            session.execute(query_update_cinema, {'1': movie_title_baru, '2': genre_baru, '3': director_baru,
-                                                                         '4': release_date_baru, '5': start_time_baru, '6': end_time_baru,
-                                                                         '7': theater_number_baru, '8': ticket_price_baru, '9': id})
+                            session.execute(query_update_cinema, {'1': movie_title_baru, '2': genre_baru, '3': director_baru,'4': release_date_baru, '5': start_time_baru, '6': end_time_baru,'7': theater_number_baru, '8': ticket_price_baru, '9': id})
                             session.commit()
                             st.experimental_rerun()
                 
