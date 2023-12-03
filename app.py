@@ -40,7 +40,7 @@ if page_cinema == "Edit Cinema Schedule":
     data = conn.query('SELECT * FROM schedule ORDER By id;', ttl="0")
     for _, result in data.iterrows():
         id = result['id']
-        movie_title_lama = result["movie_title"]
+        movie_title_lama = result['movie_title']
         genre_lama = result["genre"]
         director_name_lama = result["director"]
         release_date_lama = result["release_date"]
