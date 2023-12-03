@@ -2,6 +2,9 @@ import streamlit as st
 from sqlalchemy import create_engine, text
 import pandas as pd
 
+list_director = ['', 'Christopher Nolan', 'Frank Darabont', 'Quentin Tarantino', 'Francis Ford Coppola' ]
+list_genre = ['', 'Sci-Fi', 'Drama', 'Action', 'Crime']
+
 # Connection to the PostgreSQL database for cinema schedules
 conn = st.connection("postgresql", type="sql", 
                      url="postgresql://intanoliviaitaliyana:BHs3h0cygXUa@ep-morning-waterfall-53636265.us-east-2.aws.neon.tech/web")
