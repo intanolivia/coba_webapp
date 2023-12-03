@@ -3,8 +3,8 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 
 # Connection to the PostgreSQL database for cinema schedules
-conn_cinema = st.connection("postgresql", type="sql", 
-                            url="postgresql://your_cinema_schedule_database_connection_url")
+conn = st.connection("postgresql", type="sql", 
+                     url="postgresql://intanoliviaitaliyana:BHs3h0cygXUa@ep-morning-waterfall-53636265.us-east-2.aws.neon.tech/web")
 
 # Cinema Schedule Table
 with conn_cinema.session as session_cinema:
@@ -25,7 +25,7 @@ with conn_cinema.session as session_cinema:
     ''')
     session_cinema.execute(query_cinema_create)
 
-    # Insert data into the movie_schedule table
+    # Insert data into the movie_schedule table 
     query_cinema_insert = text('''
         INSERT INTO movie_schedule (
             movie_title, genre, director, release_date, start_time, end_time, theater_number, ticket_price
