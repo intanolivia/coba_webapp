@@ -61,7 +61,7 @@ if page_cinema == "Edit Cinema Schedule":
                 ticket_price_baru = st.number_input("Ticket Price", ticket_price_lama)
 
 
-               col1, col2 = st.columns([1, 6])
+                col1, col2 = st.columns([1, 6])
 
                 with col1:
                     if st.form_submit_button('UPDATE'):
