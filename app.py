@@ -7,7 +7,7 @@ conn = st.connection("postgresql", type="sql",
                      url="postgresql://intanoliviaitaliyana:BHs3h0cygXUa@ep-morning-waterfall-53636265.us-east-2.aws.neon.tech/web")
 
 # Cinema Schedule Table
-with conn.session as session:
+with conn.session as session_cinema:
     query = text('CREATE TABLE IF NOT EXISTS SCHEDULE (id SERIAL, movie_title TEXT, genre TEXT, director TEXT, release_date DATE, start_time TIME, end_time TIME, theater_number INT, ticket_price DECIMAL);')
    
     session_cinema.execute(query_cinema_create)
