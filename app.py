@@ -40,14 +40,14 @@ if page_cinema == "Edit Cinema Schedule":
     data = conn.query('SELECT * FROM movie_schedule ORDER By id;', ttl="0")
     for _, result in data.iterrows():
         id = result['id']
-        movie_title_lama = result.get("movie_title")
-        genre_lama = result.get("genre")
-        director_name_lama = result.get("director")
-        release_date_lama = result.get("release_date")
-        start_time_lama = result.get("start_time")
-        end_time_lama = result.get("end_time")
-        theater_number_lama = result.get("theater_number")
-        ticket_price_lama = result.get("ticket_price")
+        movie_title_lama = result["movie_title"]
+        genre_lama = result["genre"]
+        director_name_lama = result["director"]
+        release_date_lama = result["release_date"]
+        start_time_lama = result["start_time"]
+        end_time_lama = result["end_time"]
+        theater_number_lama = result["theater_number"]
+        ticket_price_lama = result["ticket_price"]
 
         with st.expander(f'{movie_title_lama}'):
             with st.form(f'movie-data-{id}'):
