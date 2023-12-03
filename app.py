@@ -12,19 +12,6 @@ with conn.session as session:
    
     session_cinema.execute(query_cinema_create)
 
-    # Insert data into the movie_schedule table 
-    query_cinema_insert = text('''
-        INSERT INTO movie_schedule (
-            movie_title, genre, director, release_date, start_time, end_time, theater_number, ticket_price
-        ) VALUES
-            ('Inception', 'Sci-Fi', 'Christopher Nolan', '2010-07-16', '13:00', '15:30', 1, 10.00),
-            ('The Shawshank Redemption', 'Drama', 'Frank Darabont', '1994-09-23', '16:00', '18:30', 2, 8.50),
-            ('The Dark Knight', 'Action', 'Christopher Nolan', '2008-07-18', '19:00', '22:00', 3, 12.00),
-            ('Pulp Fiction', 'Crime', 'Quentin Tarantino', '1994-10-14', '14:30', '17:00', 1, 9.50),
-            ('The Godfather', 'Crime', 'Francis Ford Coppola', '1972-03-24', '18:30', '21:30', 2, 11.00);
-    ''')
-    session_cinema.execute(query_cinema_insert)
-
 # Streamlit app for cinema schedule
 st.header('SIMPLE CINEMA SCHEDULE MANAGEMENT SYS')
 page_cinema = st.sidebar.selectbox("Choose Menu", ["View Cinema Schedule", "Edit Cinema Schedule"])
