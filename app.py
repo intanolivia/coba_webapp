@@ -39,8 +39,8 @@ if page_cinema == "Edit Cinema Schedule":
     # Display existing cinema schedule data with options to edit or delete
     data = conn.query('SELECT * FROM schedule ORDER By id;', ttl="0")
     result_cinema = session_cinema.execute('SELECT * FROM movie_schedule ORDER BY id;')
-      for row in result_cinema:
-        id, movie_title_lama, genre_lama, director_lama, release_date_lama, start_time_lama, end_time_lama, theater_number_lama, ticket_price_lama = row
+    for row in result_cinema:
+      id, movie_title_lama, genre_lama, director_lama, release_date_lama, start_time_lama, end_time_lama, theater_number_lama, ticket_price_lama = row
             
         with st.expander(f'{movie_title_lama}'):
                 with st.form(f'movie-data-{id}'):
