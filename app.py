@@ -3,6 +3,7 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 
 list_genre = ['', 'Sci-Fi', 'Drama', 'Action', 'Crime']
+list_theater_numbber = ['', '1', '2, '3']
 
 # Connection to the PostgreSQL database for cinema schedules
 engine = create_engine("postgresql://intanoliviaitaliyana:BHs3h0cygXUa@ep-morning-waterfall-53636265.us-east-2.aws.neon.tech/web")
@@ -49,7 +50,7 @@ if page_cinema == "Edit Cinema Schedule":
                 release_date_baru = st.date_input("Release Date", release_date_lama)
                 start_time_baru = st.time_input("Start Time", start_time_lama)
                 end_time_baru = st.time_input("End Time", end_time_lama)
-                theater_number_baru = st.number_input("Theater Number", theater_number_lama)
+                theater_number_baru = st.selectbox("Theater Number",["1", "2", "3"])
                 ticket_price_baru = st.number_input("Ticket Price", ticket_price_lama)
 
                 col1, col2 = st.columns([1, 6])
