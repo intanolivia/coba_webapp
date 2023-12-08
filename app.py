@@ -3,7 +3,7 @@ from sqlalchemy import create_engine, text
 import pandas as pd
 
 list_genre = ['', 'Sci-Fi', 'Drama', 'Action', 'Crime']
-list_theater_number = ['', '1', '2, '3']
+list_theater_number = ['', '1', '2', '3']
 
 # Connection to the PostgreSQL database for cinema schedules
 engine = create_engine("postgresql://intanoliviaitaliyana:BHs3h0cygXUa@ep-morning-waterfall-53636265.us-east-2.aws.neon.tech/web")
