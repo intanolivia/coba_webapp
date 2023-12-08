@@ -2,7 +2,6 @@ import streamlit as st
 from sqlalchemy import create_engine, text
 import pandas as pd
 
-list_director = ['', 'Christopher Nolan', 'Frank Darabont', 'Quentin Tarantino', 'Francis Ford Coppola']
 list_genre = ['', 'Sci-Fi', 'Drama', 'Action', 'Crime']
 
 # Connection to the PostgreSQL database for cinema schedules
@@ -45,7 +44,7 @@ if page_cinema == "Edit Cinema Schedule":
         with st.expander(f'{movie_title_lama}'):
             with st.form(f'movie-data-{id}'):
                 movie_title_baru = st.text_input("Movie Title", movie_title_lama)
-                genre_baru = st.text_input.selectbox("Genre", ["Sci-Fi", "Drama", "Action", "Crime"])
+                genre_baru = st.selectbox("Genre", ["Sci-Fi", "Drama", "Action", "Crime"])
                 director_baru = st.text_input("Director", director_name_lama)
                 release_date_baru = st.date_input("Release Date", release_date_lama)
                 start_time_baru = st.time_input("Start Time", start_time_lama)
